@@ -1,0 +1,15 @@
+
+body{
+    background-color: #faf2f2;
+}
+
+#postsTable {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+#postsTable th,
+#postsTable td {
+    border: 1px solid black;
+    padding: 8px;
+}

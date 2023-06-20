@@ -1,0 +1,149 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>GET DATA IN TABULAR FORM</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <script src="script.js"></script>
+  <h1>Get Data in Tabular Form</h1>
+  <button onclick="getAllPosts()">Get All Posts</button>
+  <button onclick="getPostById()">Get Post by Id</button>
+  <input type="number" id="postIdInput" placeholder="Enter the Post Id">
+  <button onclick="showCreatePostForm()">Create Post</button>
+  <button onclick="clearTable()">Clear Table</button>
+  <button onclick="delById()">DeletePostsById</button>
+
+  <div id="createPostFormContainer" style="display:none;">
+    <h2>Create Post</h2>
+    <form id="createPostForm" onsubmit="createPost(event)">
+      <label for="postId">ID:</label>
+      <input type="number" id="postId" required min="1" max="999"><br>
+
+      <label for="userId">User ID:</label>
+      <input type="number" id="userId" required min="1" max="999"><br>
+
+      <label for="title">Title:</label>
+      <input type="text" id="title" required maxlength="100000"><br>
+
+      <label for="body">Body:</label>
+      <textarea id="body" required maxlength="5"></textarea><br>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+    <table id="postsTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GET Data in Tabular Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">  
+</head>
+<body>
+  <script src="script.js"></script>
+  <h1>GET Data in Tabular Form</h1>
+  <!-- <button onclick="loadData()">Reload data</button> -->
+  <button onclick="getAllPosts()">Get All Posts</button>
+  <button onclick="getPostById()">Get Post by ID</button>
+  <input type="number" id="postIdInput" placeholder="Enter Post ID">
+  <!-- <button onclick="delById()">DeletePostsById</button> -->
+  <button onclick="clearTable()">Clear Table</button>
+  <button onclick="showCreatePostForm()">Create Post</button>
+  <!-- <button onclick="showUpdatePostForm()">Update Post By Id</button> -->
+  <input type="text" id="searchInput" placeholder="Search by User ID" />
+<button onclick="searchPosts()">Search</button>
+
+  <!-- <div id="updatePostFormContainer" style="display: none;"> -->
+    <!-- <h2>Update Post</h2> -->
+    <!-- <form id="updatePostForm" onsubmit="updatePost(event)" >
+      <label for="postId">ID:</label>
+      <input type="number" id="updatePostId" required min="1" max="999"><br>
+
+      <label for="userId">User ID:</label>
+      <input type="number" id="updateUSerId" required min="1" max="999"><br>
+
+      <label for="title">Title:</label>
+      <input type="text" id="updateTitle" required maxlenght="100,000"><br>
+
+      <label for="body">Body:</label>
+      <textarea id="updateBody" required maxlength="100,000"></textarea><br>
+
+      <button type="submit">Submit</button>
+    </form> -->
+  <!-- </div>  -->
+  <div id="editPostFormContainer" style="display: none;">
+    <h2> Edit post</h2>
+    <form id="EditPostForm" onsubmit="updatePost(event)" >
+      <label for="postId">ID:</label>
+      <input type="number" id="editPostId" required min="1" max="999" disabled><br>
+
+      <label for="userId"> User Id:</label>
+      <input type="number" id="editUserId" required min="1" max="999"><br>
+
+      <label for="title">Title:</label>
+      <input type="text" id="editTitle" required ><br>
+      <div id="msg1"></div>
+
+      <label for="body">Body:</label>
+      <textarea id="editBody" required ></textarea><br>
+      <div id ="msg4"></div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div id="createPostFormContainer" style="display: none;">
+    <h2>Create Post</h2>
+    <form id="createPostForm" onsubmit="createPost(event)">
+      <label for="postId">ID:</label>
+      <input type="number" id="postId" required min="1" max="999"><br>
+
+      <label for="userId">User ID:</label>
+      <input type="number" id="userId" required min="1" max="999"><br>
+
+      <label for="title">Title:</label>
+      <input type="text" id="title" required><br>
+      <!-- <div>length must be less than 5 chartcters</div> -->
+      <div id="msg"></div>
+
+      <label for="body">Body:</label>
+      <textarea id="body" required ></textarea><br>
+      <!-- <div> Length must be less than </div> -->
+      <div id="msg3"></div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <table id="postsTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <div id="pagination"></div>
+
+  <!-- <script src="script.js"></script> -->
+</body>
+</html>
+
